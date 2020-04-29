@@ -1,0 +1,459 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <wiringPi.h>
+// LED Pin - wiringPi pin 24 is Odroid-C1 GPIO 97.
+#define LED1   26
+#define LED6   14
+#define LED5   13
+#define LED0   12
+#define LED2   21
+#define LED4   22
+#define LED3   23
+
+void zero()
+{
+    digitalWrite (LED1, HIGH) ;  
+    digitalWrite (LED2,HIGH);
+    digitalWrite (LED3,HIGH);
+    digitalWrite (LED4,HIGH);
+    digitalWrite (LED5,HIGH);
+    digitalWrite (LED6,HIGH);
+    digitalWrite (LED0,HIGH);
+    digitalWrite (LED6,LOW);
+    delay(500);
+}
+void one()
+{
+    digitalWrite (LED1, HIGH) ;  
+    digitalWrite (LED2,HIGH);
+    digitalWrite (LED3,HIGH);
+    digitalWrite (LED4,HIGH);
+    digitalWrite (LED5,HIGH);
+    digitalWrite (LED6,HIGH);
+    digitalWrite (LED0,HIGH);
+    digitalWrite (LED3,LOW);
+    digitalWrite (LED4,LOW);
+    digitalWrite (LED5,LOW);
+    digitalWrite (LED6,LOW);
+    digitalWrite (LED0,LOW);
+    delay(500);
+}
+void two()
+{   digitalWrite (LED1, HIGH) ;  
+    digitalWrite (LED2,HIGH);
+    digitalWrite (LED3,HIGH);
+    digitalWrite (LED4,HIGH);
+    digitalWrite (LED5,HIGH);
+    digitalWrite (LED6,HIGH);
+    digitalWrite (LED0,HIGH);
+    digitalWrite (LED2,LOW);
+    digitalWrite (LED5,LOW);
+    delay (500) ;
+}
+void three()
+{
+    digitalWrite (LED1, HIGH) ;  
+    digitalWrite (LED2,HIGH);
+    digitalWrite (LED3,HIGH);
+    digitalWrite (LED4,HIGH);
+    digitalWrite (LED5,HIGH);
+    digitalWrite (LED6,HIGH);
+    digitalWrite (LED0,HIGH);
+    digitalWrite (LED4,LOW);
+    digitalWrite (LED5,LOW);
+    delay(500);
+}
+void four()
+{
+    digitalWrite (LED1, HIGH) ;  
+    digitalWrite (LED2,HIGH);
+    digitalWrite (LED3,HIGH);
+    digitalWrite (LED4,HIGH);
+    digitalWrite (LED5,HIGH);
+    digitalWrite (LED6,HIGH);
+    digitalWrite (LED0,HIGH);
+    digitalWrite (LED3,LOW);
+    digitalWrite (LED4,LOW);
+    digitalWrite (LED0,LOW);
+    delay (500) ;
+}
+void five()
+{
+   digitalWrite (LED1, HIGH) ;  
+    digitalWrite (LED2,HIGH);
+    digitalWrite (LED3,HIGH);
+    digitalWrite (LED4,HIGH);
+    digitalWrite (LED5,HIGH);
+    digitalWrite (LED6,HIGH);
+    digitalWrite (LED0,HIGH);
+    digitalWrite (LED1, LOW) ;  
+    digitalWrite (LED4,LOW);
+    delay (500) ;
+}
+void six()
+{
+   digitalWrite (LED1, HIGH) ;  
+    digitalWrite (LED2,HIGH);
+    digitalWrite (LED3,HIGH);
+    digitalWrite (LED4,HIGH);
+    digitalWrite (LED5,HIGH);
+    digitalWrite (LED6,HIGH);
+    digitalWrite (LED0,HIGH);
+    digitalWrite (LED1, LOW) ; 
+    delay (500) ; 
+}
+void seven()
+{
+   digitalWrite (LED1, HIGH) ;  
+    digitalWrite (LED2,HIGH);
+    digitalWrite (LED3,HIGH);
+    digitalWrite (LED4,HIGH);
+    digitalWrite (LED5,HIGH);
+    digitalWrite (LED6,HIGH);
+    digitalWrite (LED0,HIGH);
+    digitalWrite (LED3,LOW);
+    digitalWrite (LED4,LOW);
+    digitalWrite (LED5,LOW);
+    digitalWrite (LED6,LOW);
+    delay (500) ;
+}
+void eight()
+{
+   digitalWrite (LED1, HIGH) ;  
+    digitalWrite (LED2,HIGH);
+    digitalWrite (LED3,HIGH);
+    digitalWrite (LED4,HIGH);
+    digitalWrite (LED5,HIGH);
+    digitalWrite (LED6,HIGH);
+    digitalWrite (LED0,HIGH);
+    delay (500) ;
+}
+void nine()
+{
+   digitalWrite (LED1, HIGH) ;  
+    digitalWrite (LED2,HIGH);
+    digitalWrite (LED3,HIGH);
+    digitalWrite (LED4,HIGH);
+    digitalWrite (LED5,HIGH);
+    digitalWrite (LED6,HIGH);
+    digitalWrite (LED0,HIGH);
+   digitalWrite (LED4,LOW);
+    delay (500) ;
+
+}
+void aa()
+{
+   digitalWrite (LED1, HIGH) ;  
+    digitalWrite (LED2,HIGH);
+    digitalWrite (LED3,HIGH);
+    digitalWrite (LED4,HIGH);
+    digitalWrite (LED5,HIGH);
+    digitalWrite (LED6,HIGH);
+    digitalWrite (LED0,HIGH);
+    digitalWrite (LED3,LOW);
+    digitalWrite (LED4,LOW);
+
+    delay (500) ;
+}
+void bb()
+{
+   digitalWrite (LED1, HIGH) ;  
+    digitalWrite (LED2,HIGH);
+    digitalWrite (LED3,HIGH);
+    digitalWrite (LED4,HIGH);
+    digitalWrite (LED5,HIGH);
+    digitalWrite (LED6,HIGH);
+    digitalWrite (LED0,HIGH);
+    digitalWrite (LED0,LOW);           
+    digitalWrite (LED1, LOW) ;  
+    delay (500) ;
+}
+void cc()
+{
+   digitalWrite (LED1, HIGH) ;  
+    digitalWrite (LED2,HIGH);
+    digitalWrite (LED3,HIGH);
+    digitalWrite (LED4,HIGH);
+    digitalWrite (LED5,HIGH);
+    digitalWrite (LED6,HIGH);
+    digitalWrite (LED0,HIGH);
+    digitalWrite (LED1, LOW) ;  
+    digitalWrite (LED2,LOW);
+    digitalWrite (LED6,LOW);
+    delay (500) ;
+}
+void dd()
+{
+   digitalWrite (LED1, HIGH) ;  
+    digitalWrite (LED2,HIGH);
+    digitalWrite (LED3,HIGH);
+    digitalWrite (LED4,HIGH);
+    digitalWrite (LED5,HIGH);
+    digitalWrite (LED6,HIGH);
+    digitalWrite (LED0,HIGH);
+    digitalWrite (LED0,LOW);   
+    digitalWrite (LED5,LOW);
+    delay (500) ;
+}
+void ee()
+{
+   digitalWrite (LED1, HIGH) ;  
+    digitalWrite (LED2,HIGH);
+    digitalWrite (LED3,HIGH);
+    digitalWrite (LED4,HIGH);
+    digitalWrite (LED5,HIGH);
+    digitalWrite (LED6,HIGH);
+    digitalWrite (LED0,HIGH);
+    digitalWrite (LED2,LOW);
+    delay (500) ;
+}
+void ff()
+{
+   digitalWrite (LED1, HIGH) ;  
+    digitalWrite (LED2,HIGH);
+    digitalWrite (LED3,HIGH);
+    digitalWrite (LED4,HIGH);
+    digitalWrite (LED5,HIGH);
+    digitalWrite (LED6,HIGH);
+    digitalWrite (LED0,HIGH);
+    digitalWrite (LED1, LOW) ;  
+    digitalWrite (LED2,LOW);
+    digitalWrite (LED3,LOW);
+    delay (500) ;
+} 
+
+
+int main (int argc,char *argv[]) {
+ wiringPiSetup () ;                     
+ pinMode (LED1, OUTPUT);
+ pinMode (LED2, OUTPUT);
+ pinMode (LED3, OUTPUT);
+ pinMode (LED4, OUTPUT);
+ pinMode (LED5, OUTPUT);
+ pinMode (LED6, OUTPUT);
+ pinMode (LED0, OUTPUT);
+
+int bin[8]={0,0,0,0,0,0,0,0};
+int arr[7]={12,26,21,23,22,13,14};
+int func_num=0;
+char num[10];
+int su;
+int p=0;
+func_num=atoi(argv[1]);
+int temp[8]={0,};
+int index=0;
+int tmp_su;
+int ii;
+if((argc==2)&&(func_num==1)){
+
+printf("App1 start!\n");
+int rep[16];
+int i,j,k;
+int r;
+for(i=0;i<16;i++)
+{
+switch(i)
+{
+ case 0:
+   zero();
+   break;
+ 
+ case 1:
+   one();
+   break;
+ case 2:
+   two();
+   break; 
+ 
+ case 3:
+   three();
+   break;
+ case 4:
+   four();
+   break; 
+ 
+ case 5:
+   five();
+   break;
+ case 6:
+   six();
+   break; 
+ 
+ case 7:
+   seven();
+   break;
+ case 8:
+   eight();
+   break; 
+ 
+ case 9:
+   nine();
+   break;
+ case 10:
+   aa();
+   break; 
+ 
+ case 11:
+   bb();
+   break;
+ case 12:
+   cc();
+   break; 
+ 
+ case 13:
+   dd();
+   break;
+ case 14:
+   ee();
+   break; 
+ 
+ case 15:
+   ff();
+   break;
+ default:
+   break;
+}//switch
+
+
+}//for
+
+for(i=0;i<16;)
+{
+rep[i]=rand()%16;
+for(j=0,k=0;j<i;j++)
+{
+if(rep[i]==rep[j])
+{
+k=1;break;
+}
+}
+if(k==0)
+{i+=1;}
+
+}//for2
+
+for(i=0;i<16;i++)
+{
+r=rep[i];
+switch(r)
+{
+ case 0:
+   zero();
+   break;
+ case 1:
+   one();
+   break;
+ case 2:
+   two();
+   break;
+ case 3:
+   three();
+   break;
+ case 4:
+   four();
+   break;
+ case 5:
+   five();
+   break;
+ case 6:
+   six();
+   break;
+ case 7:
+   seven();
+   break;
+ case 8:
+   eight();
+   break;
+ case 9:
+   nine();
+   break;
+ case 10:
+   aa();
+   break;
+ case 11:
+   bb();
+   break;
+ case 12:
+   cc();
+   break;
+ case 13:
+   dd();
+   break;
+ case 14:
+   ee();
+   break;
+ case 15:
+   ff();
+   break;
+ default:
+   break;
+}//switch
+
+}
+}//if
+  
+else if((argc==3)&&(func_num==2))
+{
+strcpy(num,argv[2]);
+su=strtol(num,NULL,16);
+
+
+if((su<=127)&&(su>=6))//0x7f=127,0x06=6
+{
+ if((su==63)||(su==6)||(su==36)||(su==91)||(su==102)||(su==109)||(su==125)||(su==120)||(su==127)||(su==111)||(su==71)||(su==124)||(su==57)||(su==94)||(su==123)||(su==113))
+ {
+  tmp_su=su;
+  while(1)
+  {
+   bin[p]=su%2;
+   su=su/2;
+   p++;
+   if(su==0)
+   { break;}
+  }
+ 
+  digitalWrite (LED1,LOW) ;  
+  digitalWrite (LED2,LOW);
+  digitalWrite (LED3,LOW);
+  digitalWrite (LED4,LOW);
+  digitalWrite (LED5,LOW);
+  digitalWrite (LED6,LOW);
+  digitalWrite (LED0,LOW);
+  for(ii=0;ii<8;ii++)
+  {
+   if(bin[ii]==1)
+   {
+    temp[index]=ii;
+    index++;
+   }
+  } 
+  for(ii=0;ii<8;ii++)
+  {
+   digitalWrite(arr[temp[ii]],HIGH);
+   if((tmp_su==6)||(tmp_su==102)||(tmp_su==124)||(tmp_su==94))
+   {
+    digitalWrite(12,LOW);
+    }
+  }
+}
+else{printf("no number to blink!\n");}
+}
+
+
+else if(su>127)
+{
+ printf("A number higher than 0x7f is not allowed\n");
+}
+
+else if((su<6))
+{printf("A number lower than 0x06 is not allowed\n");}
+else
+{printf("its wrong input please try again\n");}
+}//if2
+else if((func_num!=1)&&(func_num!=2))
+{printf("Only 1 and 2 are  available for options\n");}
+else
+{printf("its wrong input please try again!!\n");}
+  return 0 ;
+}
