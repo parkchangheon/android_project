@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Hello World!"
+        android:background="@android:color/holo_green_light"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="15sp" />
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+package com.example.and1
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main) //xml이랑 매칭 시켜주는 함수
+
+
+
+    }
+}
