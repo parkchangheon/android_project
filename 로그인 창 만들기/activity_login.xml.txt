@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="16dp"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:textColor="@android:color/darker_gray"
+        android:gravity="center"
+        android:layout_marginBottom="25dp"
+        android:text="LOGIN"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@null"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/jersey"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:text="Replers"
+        android:layout_marginBottom="10dp"
+        android:textColor="@android:color/darker_gray"
+        />
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Email"
+            android:id="@+id/TextInputEditText_email"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--    <EditText
+        android:layout_width="match_parent"
+        android:hint="Email"
+        android:layout_height="50dp"/>-->
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Password"
+            android:id="@+id/TextInputEditText_password"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+ <!--   <EditText
+        android:layout_width="match_parent"
+        android:hint="PassWord"
+        android:layout_height="50dp"/>       # 이건 단순히 Email 치면 사라지는거고 위에는 Hint가 올라감-->
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+>
+    </TextView>
+
+
+
+    <Button
+        android:id="@+id/kakao_login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_blue"
+        android:textColor="#000000"
+        android:text="kakao"/>
+
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="10sp"
+        android:text=""/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_blue2"
+        android:textColor="#ffffff"
+        android:text="Facebook"
+        android:id="@+id/facebook_login"
+        />
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+
+    />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="5"
+            android:textSize="20sp"
+            android:text="Find PassWord"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="5"
+            android:textSize="20sp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:text="Sign UP"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
