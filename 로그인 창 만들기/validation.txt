@@ -1,0 +1,72 @@
+        Button_kakao_login.setClickable(false);  // 처음엔 못누르게
+        Button_facebook_login.setClickable(false);
+
+
+
+        //검사하기;     3->하고 돌아와라라
+       TextInputEditText_email.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override //글자가 바뀔때? 매개변수가 들어온다.
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                //Log.d("senti",charSequence+","+i2);
+                if(charSequence!=null) {
+                    inputEmail = charSequence.toString(); // 값을 임시로 담아줌
+
+                    if(inputEmail.equals(emailOK) &&inputPassword.equals(passwordOK)){ //아래코드가 훨씬 깔끔.
+                        Button_facebook_login.setEnabled(true);
+                        Button_kakao_login.setEnabled(true);
+
+                    }
+                    else{
+                        Button_facebook_login.setEnabled(false);
+                        Button_kakao_login.setEnabled(false);
+
+                    }
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        TextInputEditText_password.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override //글자가 바뀔때? 매개변수가 들어온다.
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                //Log.d("senti",charSequence+","+i2);
+                if(charSequence!=null) {
+                    inputPassword = charSequence.toString(); // 값을 임시로 담아줌
+                    //위코드 보다 훨씬 깔끔
+                    Button_facebook_login.setEnabled(validation());
+                    Button_kakao_login.setEnabled(validation()); //함수결과에 따라 버튼이 눌리고 안눌림
+
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+
+
+
+
+
+
+    public boolean validation(){
+        return inputEmail.equals(emailOK) &&inputPassword.equals(passwordOK);
+    }
+
