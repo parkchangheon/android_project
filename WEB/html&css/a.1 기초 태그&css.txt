@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ko">
+<html>
+    <head>
+        <meta charset="utf-8" /> 
+        <title>네이버</title>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="stylesheet" href="./naver.css"> <!-- css 쓰기위해 링크-->
+
+    </head>
+
+
+
+    <body>
+        <headering>
+            <!--<div style="margin: 0 auto; width: 1080px;">  가운데 정렬용 div-->
+            <div id="header_center"> <!-- 이런식으로 css를 쓰려면 위 참고-->
+                <!-- 속성명 : 속성값 ; 속성명2 : 속성값 2-->
+                <!-- 위에 style 방식으로 css를 넣는걸 인라인 스타일-->
+                <div>
+                    <span>네이버를 시작 페이지로</span>
+                    <span>쥬니어 네이버</span>
+                    <span>해피빈</span>
+                </div>
+               <div id="header_search">
+                <a href="https://www.naver.com" style="text-decoration: none; vertical-align: middle;">
+                    <h1>
+                            <span>네이버</span>
+                        <!-- 주석입니다 -->
+                    </h1>
+                </a>
+
+
+                    <h2 class="blind">검색창</h2>
+                    <fieldset style="vertical-align: middle;">       <!-- 필드를 만든다 -->
+                        <legend class="blind">검색</legend> <!-- 범례-->
+
+                        <input />   <!-- 입력창 -->
+                        
+                        <!-- <textarea></textarea>   좀더 긴 -->
+                        <!--<input type="checkbox"/>    다중 택-->
+                        <!--<input type="checkbox"/>   -->
+                        <!--<input type="radio" name="group"/>  하나만 택-->
+                        <!--<input type="radio" name="group"/> -->
+                        
+                        <button><sapn class="blind">검색</sapn></button>
+                    </fieldset>
+                </div>
+            </div>  
+        </headering>
+
+    
+
+        <div>
+            <ul>    <!-- unordered list 보통 점으로 표시-->
+                <li>메일</li>   <!-- list item -->
+                <li>카페</li>
+                <li>블로그</li>
+                <li>쇼핑</li>
+            </ul>
+        </div>
+
+        <div>
+            <ol> 
+                <h3>뉴스뉴스</h3><!-- 정렬된 리스트 숫자로 정렬 좌르르르르-->
+                <li><img height="20" alt="디지털타임스" class="news_logo" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/029.png" loading="lazy"></li>
+                <li>북한핵도발</li>
+                <li>싸이뱃살이!!</li>
+                <li>인천유나이티드 우승</li>
+            </ol> 
+        
+            <h3>실시간 검색어</h3>
+            <h4>로그인</h4>
+            <h5>뉴스</h5>
+            <h6>법률</h6>
+        </div>
+
+
+        <footer>   <!-- 굳이 div를 안써도 이와같이 알아서 설정해도됨-->
+            <div>공지사항</div>
+            <div>만든이들</div>
+            <div>회사소개</div>
+        </footer>
+    </body>
+
+</html>
+
+
+
+
+=================css====================
+
+
+/* 선택자*/
+*{ /*모든태그*/
+    box-sizing: border-box;
+
+}
+
+
+#header_center{
+    margin: 0 auto;
+    width : 1080px; /*픽셀은 상대적이다.*/
+
+}
+
+
+#header_search h1 {   /* 이렇게하면 그 자식을 선택*/
+    width: 200px;
+    height: 43px;
+    
+    display: inline-block;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-size: 400px;
+    background-position: 0px -150px;  /* 위치 조절*/
+    text-indent: 100%;
+    overflow: hidden;
+}
+
+#header_search a> h1> span{   /* 이렇게하면 그 자식을 선택*/
+    display: none;   /* 그리고 그 자식이 텍스트 삭제 */
+
+}
+/*
+#header_center h1{  자손을 선택 
+
+}
+*/
+
+#header_search h2 {   /* 이렇게하면 그 자식을 선택*/
+    display: none;   /* 그리고 그 자식이 텍스트 삭제 */
+
+}
+
+
+
+#header_search fieldset{
+    margin-left: 20px;
+    padding-left: 10px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-right: 0px;
+    border: 2px solid #03cf5d;
+    /*padding: 12px 0 12px 10px 위 오 아 왼 순으로 줄 수 도 있다 */
+    width: 510px;
+    height: 30px;
+    display: inline-block;
+    box-sizing: content-box;
+}
+
+#header_search fieldset input{
+    border: none;
+    padding: 0;
+    outline: none;
+}
+
+
+#header_search fieldset button{
+    width: 49px;
+    height: 49px;
+    border: none;
+    padding: 0;
+    background: #03cf5d;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-position: 523px 50px;
+}
+
+
+/*id는 고유한 ... 클래스는 여러 태그에 가능*/
+/*클래스는 . ~ 로 시작한다*/
+.blind{
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
