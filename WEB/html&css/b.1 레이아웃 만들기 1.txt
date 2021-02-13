@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ko">
+<html>
+    <head>
+        <meta charset="utf-8" /> 
+        <title>레이아웃</title>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="stylesheet" href="./make_layout.css"> <!-- css 쓰기위해 링크-->
+    </head>
+
+    <body>
+        <title_letter>
+            <center>
+                <div>제목</div>
+            </center>
+        </title_letter>
+
+
+
+
+
+        <menu>
+            <fieldset style="margin-left: -40px;"> 
+                <center>
+                    <li style="margin-right: 200px;">메뉴1</li>
+                    <li style="margin-right: 200px;">메뉴2</li>
+                    <li style="margin-right: 200px;">메뉴3</li>
+                    <li style="margin-right: 200px;">메뉴4</li>
+                    <li>메뉴5</li>
+
+                </center>
+                
+
+
+            </fieldset>
+
+        </menu>
+
+
+
+
+
+
+
+        <contents>
+            <div id="main_centered">
+
+<!-- 첫번째 블록-->
+                <div>
+                    <div id="main_ad"> 광고1</div>
+                    <div id="main_login">
+                        <h3>로그인</h3>
+                    </div>
+                </div>
+
+
+    <!-- 두번째 블록-->
+                <div id="main_second_block">
+                    <div style="display: inline-block;width: 740px;">
+                        <div id="main_news">
+                            <h3>연합뉴스</h3>
+                            <ol>
+                                <li>속보) 박창헌 너무 멋있어</li>
+
+
+                            </ol>
+                        </div>
+
+
+                        <div id="news_stand">
+                            <h3> 뉴스 스탠드</h3>
+                            <ul>
+                                <li>연합뉴스</li>
+                                <li>ytn</li>
+                                <li>mbc</li>
+                                <li>sbs</li>
+                                <li>bbc</li>
+                                <li>cnn</li>
+                                <li>times</li>
+                                <li>채널a</li>
+                                <li>tv조선</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+                    <div style="display: inline-block; vertical-align: top; width:332px">
+                        <div id="main_weather"> 날씨</div>
+                        <div id="main_second_ad"> 광고2</div>
+                    </div>
+
+                </div>
+
+
+
+    <!-- 세번째 블록-->
+                <div>
+                    <div id="main_category">
+                        <h3>주제별 보기</h3>
+                    </div>
+
+                    <div id="main_shopping">
+                        <h3>쇼핑</h3>
+                    </div>
+                </div>
+
+
+    <!-- 네번째 블록-->
+                <div>
+                    <div id="main_event">
+                        <h3>이벤트</h3>
+                    </div>
+                    
+                    <div id="main_third_ad"></div>
+                </div>
+
+            </div>
+        </contents>
+
+
+
+
+
+
+
+    </body>
+
+
+</html>
+
+
+
+
+
+
+=========================css=========================
+*{
+    box-sizing: border-box;
+
+}
+title_letter center div{
+    display: inline-block;
+}
+
+#main_centered{
+    margin-left: 250px;
+    position: relative;
+    padding: 8px 10px 0;
+    width: 1130px;
+}
+menu fieldset{
+    height: 45px;
+    border: 1px solid grey;
+}
+
+
+menu fieldset center li{
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#main_second_block{
+    display: inline-block;
+    vertical-align:top;
+}
+
+#main_ad{
+    margin-right: 8px;
+    margin-bottom: 8px;
+    display: inline-block;
+    width:740px ;
+    height: 120px;
+    background-color: hotpink;
+}
+
+#main_login{
+    margin-bottom: 8px;
+    display: inline-block;
+    width:332px ;
+    height: 120px;
+    background-color: yellow;
+    vertical-align: top;
+
+}
+
+
+#main_news{
+    margin-bottom: 8px;
+    margin-right: 8px;
+    display: inline-block;
+    width:740px ;
+    height: 46px;
+    background-color: green;
+}
+
+#main_news h3,
+#main_news ol{
+    display: inline-block;
+}
+
+#news_stand{
+    margin-bottom: 8px;
+
+    margin-right: 8px;
+
+    display: inline-block;
+    width:740px ;
+    height: 246px;
+    background-color: steelblue;
+}
+
+#news_stand h3{
+    height:45px;
+}
+
+#news_stand ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#news_stand li{
+    float: left;
+    width: 123px;
+    height: 67px;
+    border-right:1px solid tan;
+    border-bottom:1px solid tan;
+    text-align: center;
+    
+
+}
+
+#main_weather{
+    margin-bottom: 8px;
+    display: inline-block;
+    width:332px ;
+    height: 70px;
+    background-color: darkolivegreen;
+}
+
+
+#main_second_ad{
+    margin-bottom: 8px;
+    margin-right: 8px;
+    display: inline-block;
+    width:332px ;
+    height: 220px;
+    background-color: orange;
+}
+
+
+#main_category{
+    margin-right: 8px;
+    margin-bottom: 8px;
+    display: inline-block;
+    width:740px ;
+    height: 837px;
+    background-color: cyan;
+}
+
+
+#main_shopping{
+    margin-bottom: 8px;
+    display: inline-block;
+    width:332px ;
+    height: 837px;
+    background-color: greenyellow;
+}
+
+
+
+#main_event{
+    margin-right: 8px;
+    vertical-align: top;
+    display: inline-block;
+    width:740px ;
+    height: 130px;
+    background-color: rebeccapurple;
+}
+
+
+#main_third_ad{
+    display: inline-block;
+    width:332px ;
+    height: 130px;
+    background-color: khaki;
+
+}
+
+
+
+
+
+
