@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+        <title></title>
+    </head>
+
+
+
+    <body>
+        <script type="text/javascript">
+        var a=1
+        while(a<4){
+            document.write("this is "+a+"<br />");
+            a+=1;
+        }
+
+
+        var i=0;
+        for(i=0;i<10;i++){
+            if(i==4){
+                continue;
+            }
+            if(i==8){
+                break;
+            }
+            document.write("this is "+i+"<br />");
+        }
+
+        var i=0;
+        var j=0;
+        for(i=0;i<=10;i++){
+            for(j=0;j<=3;j++){
+                document.write(i,j+"<br />");
+            }
+        }
+        </script>
+
+    </body>
+
+
+
+</html>
