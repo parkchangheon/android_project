@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <script>
+            id=prompt('아이디를 입력해주세요')
+            if(id =='ego'){
+                var pwd=prompt('비밀번호 입력')
+                if (pwd=='111'){
+                    alert('로그인')
+                }
+                else{
+                    alert('패스워드 일치하지 않음')
+                }
+            }
+            else{
+                alert('아이디가 일치하지 않습니다.')
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+        <title></title>
+    </head>
+
+
+
+    <body>
+        <script>
+            var a=1;
+            prompt('내나이는?'); /* 입력 받기*/
+            alert(a); /* \ 함으로써, 무효화*/
+
+            
+        </script>
+
+    </body>
+
+
+
+</html>
+
