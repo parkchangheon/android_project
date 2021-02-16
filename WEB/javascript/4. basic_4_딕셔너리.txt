@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <ul>
+            <li>easygoing</li>
+            <li>graphica</li>
+
+        </ul>
+        <script type="text/javascript">
+        
+            var grade={'ego':10, 'kar':98,'this':12};
+            // 객체 만들기
+
+            // grade['ego']=10; 이라는 뜻....
+
+            document.write(grade['ego']+"<br />");
+            document.write(grade['kar']+"<br />");
+            var grade={'ego':10, 'kar':98,'this':12};
+            for(key in grade){
+                document.write("key : " + key + " values  :" +grade[key]+ "<br />");
+            }
+            document.write("<br />");
+
+            var newb={
+                'list1':{'ego':10,'kbkb':20},
+                'spli1':{'jjj':11}
+
+            }
+            document.write(newb['spli1']['jjj']); //10
+
+
+            //번외 함수 선언 다른 형태
+            //show : function(){
+               // ~~~~
+            }
+            
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,53 @@
+// 배열...
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function add(a,b){
+                result=a+b;
+                return result;
+            }
+
+
+
+            var member=['ego','ch','park'];
+            //alert(member);
+            //alert(member[0]);
+
+            for(var i=0;i<3;i++){
+                document.write(member[i].toUpperCase()+"<br />");
+            }
+
+            member.push('adder');  // 추가
+            document.write(member);
+            member=member.concat(['f','g']); // 배열 채로 추가
+            document.write("<br />");
+            document.write(member);
+            document.write("<br />");
+            member.unshift('z');  // 앞쪽에 추가
+            document.write(member);
+            document.write("<br />");
+            //splice => 원하는 위치에 원소 삽입
+            var a=['a','b','c'];
+            a.splice(2,1,'g'); // 1번 인덱스에 뒤의 0개를 삭제하고 g를 넣는다.
+            document.write(a);
+
+            // 데이터 제거 정렬.
+            a.shift(); //제일 앞에 있는 데이터 제거
+
+            a.pop();  //제일 끝의 데이터를 제거
+            a.sort(); // 배열 정렬
+            a.reverse(); // 역정렬.
+
+
+
+             
+
+        </script>
+    </body>
+</html>
