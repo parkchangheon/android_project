@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ytf-8"/>
+        <script type="text/javascript" src="jquery.js"></script>
+        <!-- script 태그를 만나면 src=greeting.js 코드를 실행한다.-->
+        <!-- 이 greeting.js를 다른 html 파일에서도 사용가능-->
+    </head>
+
+    <body>
+
+        <ul id="list">
+            <li>empty</li>
+        </ul>
+        <input type="button" value="execute" id="execute_btn">
+
+        <script type="text/javascript">
+            $('#execute_btn').click(function()
+            {
+                $('#list li').text('clicked btn');
+            })
+        </script>
+
+    </body>
+</html>
+
+
+// head에서 저렇게 설정하면 script태그를 만났을때 jquery.js를 실행.
+// $~를 .. 했을때 .. 해라
