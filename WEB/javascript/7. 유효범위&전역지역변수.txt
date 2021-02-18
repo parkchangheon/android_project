@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ytf-8"/>
+        <script type="text/javascript" src="greeting.js"></script>
+    </head>
+
+    <body>
+        <script>
+            var vscope = 'global';
+            function fscope(){
+                var vscope= 'local';
+                alert(vscope);  // global만 있을때는 global을 출력하지만, 이상황에서는 local을 출력
+            }
+            fscope();
+
+
+            var test=0
+            for(var k=0;k<5;k++){
+                var temp=0;  // 전역변수
+                temp+=1;
+
+            }
+            temp+=1;
+            document.write(temp);
+
+
+
+
+            function myappfn(){
+
+                var MYAPP={}
+
+                MYAPP.calculator={
+                    'left' : null,
+                    'right' : null
+                }
+
+                MYAPP.coordinate={
+                    'left' : null,
+                    'right' : null
+                }
+
+                MYAPP.calculator.left=10;
+                MYAPP.calculator.right=20;
+
+                function sum(){
+                    return MYAPP.calculator.left+MYAPP.calculator.right;
+                }
+                document.write(sum());
+        }
+
+        var res=myappfn();
+        console.log(res);
+
+
+
+
+
+
+
+
+        var i=5;
+
+        function a(){
+            var i=10;
+            b();
+        }
+
+        function b(){
+            document.write(i);
+        }
+
+        a(); // 이떄 a 호출시 b()안의 i는 전역변수 i =5를 사용
+        //즉 정의될때의 변수를 사용. 사용될때가 x   
+        // 정적 유효범위라고 함 
+        </script>
+
+    </body>
+</html>
