@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ytf-8"/>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    </head>
+
+    <body>
+        <script>
+            //함수의 변수화
+            var a= function(){};
+            // function a(){} 랑 같은 의미 
+
+            a={ //b는 키의 역할, function은 값의 역할을 함
+                //b는 일종의 변수역할을 함 a 객채안에 b속성, function은 메소드
+                //그냥 정의 된건 함수 (저 위에), 객체안에 정의 된건 메소드
+                b:function(){
+
+                }
+            };
+
+
+
+            function cal(mode){
+                var funcs={
+                    'plus' : function(left,right){return left+right},
+                    'minus' : function(left,right){return left-right}
+                }
+                return funcs[mode]; // 반환값으로 함수를 사용
+            }
+
+            alert(cal('plus')(2,1));
+            alert(cal('minus')(2,1));
+
+
+
+            var process={ //len=3
+                function(input){return input+10;}, //process[0]
+                function(input){return input*input;},
+                function(input){return input/2;}
+            };
+
+            var input=1;
+            for(var i=0;i<process.length;i++){
+                input=process[i](input);
+            }
+
+            var numbers=[20,10,11,12,1,4,2,5];
+            numbers.sort(); // numbers는 객체배열
+            //sort는 내장 메소드
+
+            document.write(numbers); // 막상해보면 sort가 안됨
+
+            var sortfunc=function(a,b){ // 기준을 정해준다.(call back 함수)
+                if(a>b){
+                    return 1;
+                }
+                else if(a<b){
+                    return -1;
+                }
+                else{
+                     return 0;
+                }
+                // 더 간단하게 하면 위에 다 지우고 return a-b;
+
+            }
+            document.write(numbers.sort(sortfunc)); //원하는 정렬
+        </script>
+
+        <script type="text/javascript">
+        $.get(
+            './datasource.json.js',
+            function(result){ //$는 j쿼리 get  메소드를 쓴다.
+            console.log(result);
+        },'json');
+        </script>
+
+
+        <script type="text/javascript">
+            function getDate(){
+                var tableData;
+                $.get('https://domain.com/products/1',function(response){ //$.get은 ajax 통신을 하는부분
+                    // https://domain에 http get 요청을 날려 1번 상품 정보를 요청하는 코드.
+                    tableData=response;
+            });
+            return tableData 
+            // 그런데 리턴하면 아무것도 없다. 즉 실행이 끝날때까지 기다리지 않고 나머지 코드를 미리 실행했기 때문 => 이게 비동기 처리
+            }
+            console.log(getData());
+// 이런 비동기 처리 문제들을 해결하는 방법중 하나가 콜백함수이다.
+
+        </script>
+
+<!--해결방법-->
+        <script>
+
+
+        </script>
+    </body>
+</html>
