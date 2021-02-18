@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ytf-8"/>
+        <script type="text/javascript" src="greeting.js"></script>
+        <!-- script 태그를 만나면 src=greeting.js 코드를 실행한다.-->
+        <!-- 이 greeting.js를 다른 html 파일에서도 사용가능-->
+    </head>
+
+    <body>
+        <script>
+            var str="a";
+            var pattern= /a./;     // 찾고자 하는 정보는 a이다. .은 어떤 문자던 가능
+            var pattern2= new RegExp('a');
+
+
+            pattern.exec('abcde'); //패턴 a를 찾고자 한다.
+            pattern.exec('bcde'); // a가 없으므로 null을 리턴 
+
+
+            var pattern =/a/;
+
+            var str="abcdef";
+            str.match(pattern); //["a"] 출력
+            
+
+            var xi = /a/;
+            "Abcde".match(xi);
+            
+
+            var oi= /a/i;
+            "Abcde".match(oi);  //i를 붙이면 대소문자 관계없이 가능
+
+
+            var p=/(\w+)\s(/w+)/;
+
+            var str="coding everybody";
+
+            var result=str.replace(p,'$2','$1');
+            //=> 위에 방법대로 replace하면 everybody coding이 출력
+
+            var urlPattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;
+            var content='네이버 주소는: http://naver.com 입니다';
+            var res = content.replace(urlPattern, function(url){
+                return '<a href="'+url+'">'+url+'</a>';
+
+            });
+            console.log(result);
+            // 링크를 태그가 감싸는 형식으로 출력
+
+
+
+
+
+
+
+        </script>
+
+    </body>
+</html>
