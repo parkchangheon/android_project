@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ytf-8"/>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    </head>
+
+    <body>
+        <script>
+            function outter(){
+                var title='coding testtttttt';
+                function inner(){
+                    alert(title); // 내부함수는 외부함수의 변수에 접근 가능
+                }
+                inner();
+            }
+        </script>
+
+
+        <script>
+            function outter(){
+                var title='coding testtttttt';
+                return function(){
+                    alert(title); // return 문의 function이 내부함수
+                }
+                inner()=outter(); //리턴시 이미 아우터 함수는 실행 종료
+                inner();
+            }
+        </script>
+
+        <script>
+        
+            function factory_movie(title){
+                return{
+                    get_title : function(){
+                        return title;
+                    },
+                    set_title : function(_title){
+                        title=_title
+                    }
+                }
+            }
+            ghost = factory_movie('ghost in the shell'); // 처음에 ghost in the shell이 출력
+            matrix = factory_movie('Matrix');
+            alert(ghost.get_title()); // ghost...를 출력
+            alert(matrix.get_title()); // matrix를 출력
+            ghost.set_title('공각기동대');
+            alert(ghost.get_title());  // 공각기동대
+            alert(matrix.get_title()); // matrix
+
+        </script>
+
+        
+    </body>
+</html>
