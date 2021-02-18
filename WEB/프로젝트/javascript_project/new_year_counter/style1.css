@@ -1,0 +1,42 @@
+
+*{
+    box-sizing: border-box;
+}
+
+
+body{
+    background-image: url('https://images.unsplash.com/photo-1535189043414-47a3c49a0bed?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80');
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center center; /*그림을 중앙위치*/
+    display: flex;  /**/
+    align-items: center;    /*(가로)교차축에 대해 flex항목 정렬*/
+    justify-content: center; /* (상하)주축에 대해 flex 항목을 정렬*/
+    flex-direction: column;  /*플렉스 아래방향으로*/
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+}
+
+.countdown-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.big-text{
+    font-weight: bold;
+    font-size: 6rem;
+    line-height: 1;
+    
+    margin: 1rem 2rem;
+}
+
+.countdown-el{
+    text-align: center;
+
+}
+
+.countdown-el span{
+    font-size: 1.5rem;
+}
