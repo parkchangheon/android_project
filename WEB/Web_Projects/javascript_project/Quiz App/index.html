@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" 
+        content="width=device-width,
+        initial-scale=1.0"/>
+        <title>Quiz App</title>
+        <link rel="stylesheet" href="./style2.css"/>
+        <script src="script.js" defer></script>
+    </head>
+
+
+    <body>
+
+        <div class="quiz-container">
+            <div class="quiz-header">
+
+                <h2 id="Question">Question Text</h2>
+                <ul>        <!--ul>li>input+label로 생성-->
+                    <li>
+                        <input type="radio" id="a" name= "answer" class="answer"/>
+                        <label id="a_text" for="a">Question</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="b" name= "answer" class="answer"/>
+                        <label id="b_text" for="b">Question</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="c" name= "answer" class="answer">
+                        <label id="c_text" for="c">Question</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="d" name= "answer" class="answer"/>
+                        <label id="d_text" for="d">Question</label>
+                    </li>
+        
+                </ul>
+                    
+            </div>
+
+            <button id="sub">Submit</button>
+        </div>
+
+    </body>
+
+
+</html>

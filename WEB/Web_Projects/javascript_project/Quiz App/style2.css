@@ -1,0 +1,64 @@
+
+*{
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color:lightpink;
+    background-size: cover;
+    display: flex;  /* flex는 내 박스만, grid는 상자 여러개 이미 만들어짐.*/
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-position: center center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+
+}
+
+.quiz-container{
+    background-color: white;
+    border-radius: 10px;
+    width: 600px;
+    box-shadow: 0 0 10px 2px (0,0,0,0.1);
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.quiz-header{
+    padding: 4rem;
+
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+h2{
+    margin: 0rem;
+}
+
+ul li{
+    margin: 1rem 0;
+}
+
+ul li label{
+    cursor: pointer;    /* 그저 답안에만 올려도 커서 모양 만들기*/
+}
+
+button{
+    background-color: thistle;
+    color: white;
+    border: none;
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;  /*위에 올렸을때, 커서가 바뀐다*/
+    width: 100%;
+    padding:1rem;
+}
+
+button:hover{  /* 위에 올렸을때 작동*/
+    background-color:rgb(136, 109, 136);
+}
