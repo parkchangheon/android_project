@@ -1,0 +1,62 @@
+
+*{
+    box-sizing: border-box;
+}
+.headline{
+    font-size: 10rem;
+    color: rgb(125, 163, 214);
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+body{
+    background-color: rgb(48, 85, 116);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    margin-right: 5.5rem;
+    
+}
+
+main .sub_div{
+    height: 15rem;
+    width: 15rem;
+    float: right;
+    margin-bottom: 15rem;
+}
+
+
+.movie img{
+    width:100%;
+}
+
+.movie-info{
+    height: 5rem;
+    width: 15rem;
+    background-color: rgb(91, 145, 189);
+    border-radius: 3px;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem 1rem;
+    letter-spacing: 1px;
+    align-items: center;
+}
+
+
+.movie-info h3{
+    margin: 0;
+}
+
+
+.movie-info span{
+    background-color: steelblue;
+    border-radius: 3px;
+    padding: 0.25rem 0.5rem;
+}
+
+
+.sub_div{
+    margin-left: 1rem;
+    
+}
