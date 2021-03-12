@@ -16,6 +16,25 @@ body{
     margin-right: 5.5rem;
     
 }
+header{
+    background-color: rgb(48, 85, 116);
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.5rem;
+}
+
+header input{
+    background-color:transparent;
+    padding: 0.5rem;
+    border-radius: 50px;
+    border : 2px solid rgb(125, 163, 214);
+}
+
+header input::placeholder{
+    color: rgb(125, 163, 214);
+}
+
+
 
 main .sub_div{
     height: 15rem;
@@ -53,10 +72,25 @@ main .sub_div{
     background-color: steelblue;
     border-radius: 3px;
     padding: 0.25rem 0.5rem;
+    font-weight: bold;
 }
 
 
 .sub_div{
     margin-left: 1rem;
     
+}
+
+
+
+.movie-info span green{
+    color: rgb(100, 190, 9);
+}
+
+.movie-info span orange{
+    color: coral;
+}
+
+.movie-info span red{
+    color: rgb(220, 20, 160);
 }

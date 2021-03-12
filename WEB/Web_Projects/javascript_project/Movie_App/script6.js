@@ -20,12 +20,12 @@ async function getMovies(){
         const img = document.createElement('img');
         const sub=document.createElement('div');
         block.className="sub_div";
-        
+
         img.src = IMGPATH+poster_path
         sub.className = "movie-info";
         sub.innerHTML=[
             "<h3>"+title+"</h3>",
-            "<span>"+vote_average+"</span>"
+            "<span>"+get_vote(vote_average)+"</span>"
         ].join("");
 
         block.appendChild(img);
@@ -37,6 +37,18 @@ async function getMovies(){
     
     
     return respData;
+}
+
+function get_vote(vote){
+    if(vote>=8){
+        return'<green>'+vote+'</green>';
+    }
+    else if(vote>=5){
+        return '<orange>'+vote+'</orange>';
+    }
+    else{
+        return '<red>'+vote+'</red>';
+    }
 }
 
 getMovies();
