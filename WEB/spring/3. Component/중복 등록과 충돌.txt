@@ -1,0 +1,28 @@
+중복과 충돌
+
+자동빈 등록 vs 자동 빈 등록 
+
+=> ConflictingBeanDefinitionException 예외 발생 
+
+Configuration('as')
+Configuration('as') 중 하나의 이름을 바꿔줌
+
+
+
+
+
+수동빈 등록 vs 자동 빈 등록
+
+=> 실행은 성공이 된다.
+근데 overridingdefinition이 뜨면서 수동빈 등록이 우선권을 가져간다.
+
+수동빈이 자동빈을 override함 
+=>무엇을 replacing 했는지 나옴
+
+근데 메인에서 실행하면 오류 메세지가 친절히 나옴
+Action을 통해 수정하는 절차를 거치도록 하자
+
+
+부트는 이 문제가 많이 일어나서 이렇게 띄워놓음
+
+
