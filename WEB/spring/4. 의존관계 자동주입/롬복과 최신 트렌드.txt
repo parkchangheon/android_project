@@ -1,0 +1,95 @@
+롬복과 최신 트렌드
+
+개발을 해본다면 대부분 불변이다.
+그러나 생성자도 만들어야하고 주입받은 값을 대입하는 코드도 만들어야한다.
+
+하지만 생성자 주입은 코드도 길어지고 조금 불편함
+그래서 필드 주입처럼 편리하게 사용할 수 있는 방법이 없을까 고민함.
+
+
+
+@Component
+public class OrderServiceImpl implements OrderService{
+
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+
+    //생성자 주입
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
+
+
+만약 생성자가 하나라면 @Autowired를 생략할 수 있다고 했다 (위처럼)
+
+
+
+
+
+
+
+package hello.core;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+
+@Getter
+@Setter
+@ToString
+public class hellolombok {
+
+    private String name;
+    private int age;
+
+    public static void main(String[] args) {
+        hellolombok HL=new hellolombok();
+        HL.setName("parker");
+
+        String name=HL.getName();
+        System.out.println("name = " + name);
+        //System.out.println("HL = " + HL); ToString을 사용시..
+    }
+
+}
+
+
+
+
+
+
+
+
+
+추가로 롬복 기능
+
+@Component
+@RequiredArgsConstructor //생성자 코드를 똑같이 만들어줌.. final을 붙은 필드값을 토대로 (필요한 값이 들어가야할) 생성자를 자동 생성
+public class OrderServiceImpl implements OrderService{
+
+
+private final MemberRepository memberRepository;
+private final DiscountPolicy discountPolicy; 
+
+// @RequiredArgsConstructor 를 사용해서 굳이 생성자가 필요 없음.
+
+//-간단-
+
+
+//.... 
+    @Override
+    public Order createOrder(Long memberId, String itemName, int itemPrice) {
+        Member member= memberRepository.findById(memberId);
+        int discountPrice = discountPolicy.discount(member,itemPrice);
+
+        return new Order(memberId,itemName,itemPrice,discountPrice);
+    }
+}
+
+
+=> 가장 간단하다.
+
+
