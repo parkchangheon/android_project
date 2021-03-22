@@ -1,0 +1,131 @@
+조회대상이 2개 이상일때 즉 빈이 두개 이상일 떄
+
+@Autowired 필드명, @Qulifier @Primary
+해결방법
+
+
+1) @Autowired 필드명)
+
+-> 타입으로 매칭을 시도 함. 
+이때 여러 빈이 존재 한다면, 필드 이름, 파라미터 이름으로 빈 이름을 추가 매칭한다.
+
+ex) 
+@Autowired
+private DiscountPolicy discountPolicy
+
+
+
+@Autowired
+private DiscountPolicy ratediscountPolicy
+
+
+DiscountPolicy로 탕비이 같다면 필드명이나, 생성자의 경우 파라미터의 이름을 보고 찾아옴.
+즉 필드명이 같다면 필드명 같은거를 가져옴.
+
+
+   @Autowired
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy rateDiscountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = rateDiscountPolicy;
+    }
+
+이런식으로
+
+
+
+그래서 Autowired로 매칭 했을때 
+1. 타입이 같은지 먼저 보고
+2. 타입이 같은게 2개이상이라면 필드명이나 파라미터로 조회가 가능하다
+
+
+
+
+
+2. @Qualifier  - 추가 구문자)
+주입시 추가적인 방법을 제공하는 것이지, 빈 이름을 변경하는게 아님.
+
+즉 @Qualifier("mainDiscountPolicy") 라고 지정을 해놓으면, 
+
+  @Autowired
+    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("fix") DiscountPolicy rateDiscountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = rateDiscountPolicy;
+    }
+이런식으로 조회가 가능
+
+
+
+
+
+
+3. @Primary  (자주쓰임)
+우선 순위를 정함 
+
+
+
+@Component
+@Primary
+public class RateDiscountPolicy implements DiscountPolicy {
+
+    private int discountPercent=10;
+
+    @Override
+    public int discount(Member member, int price) {
+        if(member.getGrade() == Grade.VIP){
+            return price*discountPercent/100;
+        }
+        else{
+            return 0;
+        }
+    }
+}
+
+이러면  rateDiscountpolicy 가 먼저 실행된다.
+
+
+
+코드에서 자주 사용되는 메인 DB는 @Primary를 이용하여 연결, 조회하고,
+서브 DB는 @Qulifier를 적용하여 명시적으로 획득한다면 코드를 깔끔히 유지할 수 있다.
+
+
+@Primary는 기본값 처럼 동작하고, @Qulifier는 
+매우 상세하게 동작한다.
+이런경우 어떤것이 우선순위를 갖느냐?? => 스프링은 거의 자동보다는 수동이 넓은 범위의 
+선택권보다는 좁은 범위의 선택권이 우선순위가 높다.
+따라서도 여기서도 @Qulifier가 우선순위가 높다고 할 수있다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
