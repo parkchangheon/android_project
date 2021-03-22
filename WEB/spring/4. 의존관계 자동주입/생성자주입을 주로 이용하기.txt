@@ -1,0 +1,38 @@
+주로 생성자를 이용하라.
+
+필드 선언시 final 키워드를 사용한다면, 생성자에서 혹시라도 값이 설정되지 않는 오류를 컴파일 시점에서 막아줌
+
+컴파일 오류는 세상에서 가장 빠르고 바로 확인을 할 수 있는 오류이다.
+
+public class OrderServiceTest {
+
+    @Test
+    void createOrder(){
+        Long memberId=1L;
+        Member member = new Member(memberId,"memberA", Grade.VIP);
+        memberService.join(member);
+
+        Order order = orderService.createOrder(memberId,"itemA",10000);
+        Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
+    }
+
+}
+
+
+private final MemberRepository memberRepository;
+private final DiscountPolicy discountPolicy; 
+
+
+
+    //생성자 주입
+    @Autowired //이 아래의 생성자를 생성할때 자동으로 MemberRepository, DiscountPolicy를 주입
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
+
+만약 위 부분에서 this.~~~ 가 누락된다면 필드에서 final을 사용하였기 때문에 
+컴파일 오류를 내보냄.
+무언가 값이 들어와야 하는데 들어오지 않았기 때문에! 
+그리고 생성자가 항상 먼저 생성 되고 그 이후에 수정자가 주입되므로, final 을 사용 가능 
+
