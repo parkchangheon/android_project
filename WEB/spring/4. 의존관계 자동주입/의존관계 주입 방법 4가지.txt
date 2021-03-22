@@ -1,0 +1,148 @@
+다양한 의존관계 주입 방법
+
+1. 생성자 주입
+2. 수정자 주입
+3. 필드 주입
+4. 일반 메서드 주입
+
+
+1. 생성자 주입 )
+생성자 호출 시점에 딱 한번 만 호출이 되는 것을 보장한다.
+*불변 필수 의존 관계시 사용 
+# 불변 :  더이상 바뀌면 안되는 값들을 설정할때 이렇게함.
+# 필수 : 생성자에 들어오는 것들은 값이 꼭 있어야한다.
+
+만약 생성자가 1개 있다면 @Autowired를 안써도 된다.
+근데 되도록 쓰도록 하자 ^^
+
+
+
+
+
+2. 수정자 주입)
+
+
+@Component
+public class OrderServiceImpl implements OrderService{ 
+
+
+	private MemberRepository memberRepository;
+
+	private DiscountPolicy discountPolicy;
+
+	   @Autowired
+    	public void setDiscountPolicy(DiscountPolicy discountPolicy) {
+        		this.discountPolicy = discountPolicy;
+  	  }
+  	 @Autowired
+    	public void setMemberRepository(MemberRepository memberRepository) {
+        		this.memberRepository = memberRepository;
+    	}
+
+여기서 OrderServiceImpl 이 스프링 컨테이너에 등록이 되면 안에 빈을 등록하고
+@Autowired 설정된 애들을 주입.
+스프링 라이프사이클 : 빈을 생성하는 단계와 의존관계 주입하는 단계로 나눠짐.
+//위에 set이 붙은것을 볼 수 있다.
+
+생성자는 거의 강제적으로 의존관계가 주입된다고 보면 됨
+
+
+#특징은 수정(변경)이 가능하다. - 선택적으로 사용 가능 
+
+
+setter라 불리는 필드의 값을 변경하는 수정자 메서드를 통해 의존관계를 주입.
+@Autowired의 주입대상이 없으면 오류 발생
+
+***규약
+class Data{
+  private int age;
+  public void setAge(int age){
+    this.age=age;
+  }
+ 
+  public void getAge(int age){
+    return age;
+   } 
+}
+
+
+
+
+3. 필드주입)
+필드에 바로 값을 주입.
+
+
+
+@Autowired private MemberRepository memberRepository;
+@Autowired private DiscountPolicy discountPolicy; 
+이것이 필드주입
+
+=> 코드 간결하고 좋으나,별로 권장하는 방법은 아님.
+이유 : 외부에서의 변경이 불가능해서 테스트하기 힘듦
+
+DI 프레임워크가 없으면 쓸모가 없다. 웬만하면 사용하지 말자.
+
+
+    
+
+4. 일반메서드 주입)
+아무 메세드에나 주입가능
+한번에 여러 필드를 주입받을 수 있으나 잘 사용하지않음
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
