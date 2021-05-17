@@ -8,6 +8,7 @@
         create table if not exists userTB
         (
             u_id char(10) not null primary key,
+            u_pw int not null,
             u_name varchar(10) not null,
             u_hp char(13) not null,
             u_addr char(10) not null,

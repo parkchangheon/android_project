@@ -16,20 +16,21 @@
 
     echo "<TABLE BORDER=1>";
     echo "<TR>";
-    echo "<TH>아이디</TH> <TH>이름</TH> <TH>전화번호</TH> <TH>주소</TH>";
+    echo "<TH>아이디</TH><TH>비밀번호</TH> <TH>이름</TH> <TH>전화번호</TH> <TH>주소</TH>";
     echo "<TH>나이</TH> <TH>성별</TH> <TH>수정</TH> <TH>삭제</TH>";
     echo "</TR>";
 
     while($row = mysqli_fetch_array($ret)) {
         echo "<TR>";
         echo "<TD>", $row['u_id'], "</TD>";
+        echo "<TD>", $row['u_pw'], "</TD>";
         echo "<TD>", $row['u_name'], "</TD>";
         echo "<TD>", $row['u_hp'], "</TD>";
         echo "<TD>", $row['u_addr'], "</TD>";
         echo "<TD>", $row['u_age'], "</TD>";
         echo "<TD>", $row['u_sex'], "</TD>";
-        echo "<TD>", "<A HREF='update.php? u_id=", $row['u_id'], "'>수정</A></TD>";
-        echo "<TD>", "<A HREF='delete.php? u_id=", $row['u_id'], "'>삭제</A></TD>";
+        echo "<TD>", "<A HREF='update.php?userID=", $row['u_id'], "'>수정</A></TD>";
+        echo "<TD>", "<A HREF='delete.php?userID=", $row['u_id'], "'>삭제</A></TD>";
         echo "</TR>";
     }
 
